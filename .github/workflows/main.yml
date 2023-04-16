@@ -24,6 +24,9 @@ jobs:
       - name: build package
         run: python -m http-server &
         
+      - name: test http server
+        run: curl -I http://localhost:8080
+        
       - name: build-image from dockerfile
         run: docker build . --tag test-workflow:v1
         
