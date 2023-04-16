@@ -9,6 +9,12 @@ jobs:
   build-n-publish:
     runs-on: ubuntu-latest
     steps:
+      - name: wait for approval
+        uses: trstringer/manual-approval@v1
+        with:
+           secret: ${{ secrets.TOKEN }}
+           approvers: diksha1999
+           
       - uses: actions/checkout@v2
       
       - name: setup-python
@@ -36,4 +42,6 @@ jobs:
           name: dikshash1999/workflows
           username: ${{ secrets.REPO_UNAME }}
           password: ${{ secrets.REPO_PASSWORD }}
+          
+          
     
