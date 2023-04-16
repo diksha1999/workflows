@@ -27,5 +27,10 @@ jobs:
       - name: build-image from dockerfile
         run: docker build . --tag test-workflow:v1
         
-        
+      - name: publish-image
+        uses: elgohr/Publish-Docker-Github-Action@master
+        with:
+          name: dikshash1999/workflows
+          username:
+          password: 
     
