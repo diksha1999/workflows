@@ -31,6 +31,6 @@ jobs:
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
           name: dikshash1999/workflows
-          username:
-          password: 
+          username: ${{ secrets.REPO_UNAME }}
+          password: ${{ secrets.REPO_PASSWORD }}
     
